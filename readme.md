@@ -15,7 +15,9 @@ KinectはRGBカメラと距離カメラから、複数の人間を認識して�
 前述の通りKinectは体の関節などの各部位の点を取得できる。
 Kinectで股間領域を特定する場合、股間そのもの位置は取得できないためヘソの位置、両足の付け根付近の位置から股間領域を計算しモザイク処理をした。
 
-＠＠＠＠画像を置く＠＠＠＠
+Kinectを用いた股間領域特定手法の概念図
+![](https://raw.githubusercontent.com/konyu/detection_mans_private_area/master/img/kinect_ver.png)
+
 
 # 今回提案するOpenCVで顔認識を用いた手法
 残念なことにKinect自体はディスコンになってしまった。画像のみでボーンを取得できるものライブラリが現れた。今年2017はRGBカメラとディープラーニングを用いて人間の体の座標を取得できる
@@ -52,7 +54,10 @@ OpenCVのRuby用のライブラリはOpenCVは2系までしか対応しておら
 
 画像からある色の領域を二値化するコマンドがあるので容易である。
 黒い領域を取り出した際に、下記画像のように白い領域の用に白(255)となる
-@@マスク画像@@
+
+
+黒のフリースを北胸から上の画像
+![](https://raw.githubusercontent.com/konyu/detection_mans_private_area/master/img/color_mask.png)
 
 ### プログラムの概要
 このような処理をループ処理することにより股間にモザイクをかける処理を実装している
@@ -65,6 +70,12 @@ OpenCVのRuby用のライブラリはOpenCVは2系までしか対応しておら
 1. 陰毛領域から一定サイズの四角い領域をモザイク処理する
 
 
-＠＠＠＠画像を置く＠＠＠＠
+OpenCVの顔認識機能を用いた股間領域特定手法の概念図
+![](https://raw.githubusercontent.com/konyu/detection_mans_private_area/master/img/faceditection_ver.png)
+
 
 ## デモ動画
+リアルに股間丸出しででも動画を取ったけれども、あまりにもリアルだったので、
+黒いモバイルバッテリーで試したデモ動画をアップした(リアルバージョンは実際にオレに会ったら見せるよ)
+
+[![](http://i.ytimg.com/vi/yvKvqHBRzsY/sddefault.jpg)](https://youtu.be/yvKvqHBRzsY)
